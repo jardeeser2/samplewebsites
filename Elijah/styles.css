@@ -9,7 +9,7 @@
   --amber-deep: #c48410;
   --steel: #7a8078;
   --white: #f8f6f1;
-  --font-display: "Bebas Neue", Impact, sans-serif;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
   --font-body: "Manrope", "Helvetica Neue", sans-serif;
   --space: clamp(1.25rem, 3vw, 2.5rem);
   --max: 1120px;
@@ -79,14 +79,15 @@ p {
 .logo {
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   line-height: 0.95;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .logo span {
   color: var(--amber);
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
 }
 
 .nav {
@@ -170,11 +171,12 @@ p {
 .brand-mark {
   font-family: var(--font-display);
   font-size: clamp(2.6rem, 8vw, 5.5rem);
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 0.92;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
-  max-width: 12ch;
+  max-width: 14ch;
 }
 
 .phone-hero {
@@ -185,6 +187,7 @@ p {
   display: inline-block;
   font-family: var(--font-display);
   font-size: clamp(3rem, 12vw, 6.5rem);
+  font-weight: 700;
   letter-spacing: 0.05em;
   line-height: 0.9;
   color: var(--amber);
