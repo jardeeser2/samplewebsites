@@ -34,14 +34,37 @@
     });
   }
 
+  const filterButtons = Array.from(document.querySelectorAll(".portfolio-filters [data-filter]"));
   const items = Array.from(document.querySelectorAll(".portfolio-item"));
+
+  function visibleItems() {
+    return items.filter((item) => !item.classList.contains("is-hidden"));
+  }
+
+  if (filterButtons.length && items.length) {
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const filter = btn.dataset.filter;
+        filterButtons.forEach((b) => b.classList.toggle("is-active", b === btn));
+        items.forEach((item) => {
+          const match = filter === "all" || item.dataset.category === filter;
+          item.classList.toggle("is-hidden", !match);
+        });
+      });
+    });
+  }
+
   if (!items.length) return;
 
-  const slides = items.map((btn) => ({
-    src: btn.dataset.full || btn.querySelector("img")?.src || "",
-    alt: btn.querySelector("img")?.alt || "",
-    caption: btn.querySelector("span")?.textContent || "",
-  }));
+  function slidesFrom(list) {
+    return list.map((btn) => ({
+      src: btn.dataset.full || btn.querySelector("img")?.src || "",
+      alt: btn.querySelector("img")?.alt || "",
+      caption: btn.querySelector("span")?.textContent || "",
+    }));
+  }
+
+  let slides = slidesFrom(items);
 
   const lightbox = document.createElement("div");
   lightbox.className = "lightbox";
@@ -59,6 +82,7 @@
   let index = 0;
 
   function show(i) {
+    if (!slides.length) return;
     index = (i + slides.length) % slides.length;
     const slide = slides[index];
     img.src = slide.src;
@@ -66,8 +90,10 @@
     caption.textContent = `${slide.caption} · ${index + 1} / ${slides.length}`;
   }
 
-  function open(i) {
-    show(i);
+  function openFromButton(btn) {
+    slides = slidesFrom(visibleItems());
+    const start = slides.findIndex((slide) => slide.src === (btn.dataset.full || btn.querySelector("img")?.src));
+    show(start < 0 ? 0 : start);
     lightbox.classList.add("is-open");
     document.body.style.overflow = "hidden";
   }
@@ -78,7 +104,7 @@
     img.src = "";
   }
 
-  items.forEach((btn, i) => btn.addEventListener("click", () => open(i)));
+  items.forEach((btn) => btn.addEventListener("click", () => openFromButton(btn)));
   lightbox.querySelector(".lightbox-close").addEventListener("click", close);
   lightbox.querySelector(".lightbox-nav.prev").addEventListener("click", (e) => {
     e.stopPropagation();

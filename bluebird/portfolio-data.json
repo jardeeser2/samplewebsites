@@ -1,114 +1,142 @@
 [
   {
     "name": "101 S Almon",
-    "local": "assets/portfolio/01-101-s-almon.jpg"
+    "local": "assets/portfolio/01-101-s-almon.jpg",
+    "category": "Homes"
   },
   {
     "name": "Red Cube",
-    "local": "assets/portfolio/02-red-cube.jpeg"
+    "local": "assets/portfolio/02-red-cube.jpeg",
+    "category": "Apartments"
   },
   {
     "name": "909 West A",
-    "local": "assets/portfolio/03-909-west-a.png"
+    "local": "assets/portfolio/03-909-west-a.png",
+    "category": "Apartments"
   },
   {
     "name": "226 N Line ST",
-    "local": "assets/portfolio/04-226-n-line-st.png"
+    "local": "assets/portfolio/04-226-n-line-st.png",
+    "category": "Apartments"
   },
   {
     "name": "502 S Almon",
-    "local": "assets/portfolio/05-502-s-almon.png"
+    "local": "assets/portfolio/05-502-s-almon.png",
+    "category": "Apartments"
   },
   {
     "name": "1108 Front",
-    "local": "assets/portfolio/06-1108-front.png"
+    "local": "assets/portfolio/06-1108-front.png",
+    "category": "Apartments"
   },
   {
     "name": "1310 W AVE",
-    "local": "assets/portfolio/07-1310-w-ave.png"
+    "local": "assets/portfolio/07-1310-w-ave.png",
+    "category": "Apartments"
   },
   {
     "name": "White Cube",
-    "local": "assets/portfolio/08-white-cube.jpg"
+    "local": "assets/portfolio/08-white-cube.jpg",
+    "category": "Apartments"
   },
   {
     "name": "University Point",
-    "local": "assets/portfolio/09-university-point.jpg"
+    "local": "assets/portfolio/09-university-point.jpg",
+    "category": "Commercial Spaces"
   },
   {
     "name": "1044 Building",
-    "local": "assets/portfolio/10-1044-building.jpg"
+    "local": "assets/portfolio/10-1044-building.jpg",
+    "category": "Commercial Spaces"
   },
   {
     "name": "875 8th Street",
-    "local": "assets/portfolio/11-875-8th-street.png"
+    "local": "assets/portfolio/11-875-8th-street.png",
+    "category": "Commercial Spaces"
   },
   {
     "name": "Potlatch Mall",
-    "local": "assets/portfolio/12-potlatch-mall.jpg"
+    "local": "assets/portfolio/12-potlatch-mall.jpg",
+    "category": "Commercial Spaces"
   },
   {
     "name": "705 North Main",
-    "local": "assets/portfolio/13-705-north-main.png"
+    "local": "assets/portfolio/13-705-north-main.png",
+    "category": "Commercial Spaces"
   },
   {
     "name": "426 Front",
-    "local": "assets/portfolio/14-426-front.jpeg"
+    "local": "assets/portfolio/14-426-front.jpeg",
+    "category": "Homes"
   },
   {
     "name": "426 Patio",
-    "local": "assets/portfolio/15-426-patio.jpeg"
+    "local": "assets/portfolio/15-426-patio.jpeg",
+    "category": "Homes"
   },
   {
     "name": "213 N Almon",
-    "local": "assets/portfolio/16-213-n-almon.jpg"
+    "local": "assets/portfolio/16-213-n-almon.jpg",
+    "category": "Homes"
   },
   {
     "name": "248 North Asbury",
-    "local": "assets/portfolio/17-248-north-asbury.png"
+    "local": "assets/portfolio/17-248-north-asbury.png",
+    "category": "Homes"
   },
   {
     "name": "835 Main Street",
-    "local": "assets/portfolio/18-835-main-street.png"
+    "local": "assets/portfolio/18-835-main-street.png",
+    "category": "Homes"
   },
   {
     "name": "Hamilition Commons",
-    "local": "assets/portfolio/19-hamilition-commons.png"
+    "local": "assets/portfolio/19-hamilition-commons.png",
+    "category": "Homes"
   },
   {
     "name": "217 North Almon",
-    "local": "assets/portfolio/20-217-north-almon.png"
+    "local": "assets/portfolio/20-217-north-almon.png",
+    "category": "Homes"
   },
   {
     "name": "209 N Almon",
-    "local": "assets/portfolio/21-209-n-almon.png"
+    "local": "assets/portfolio/21-209-n-almon.png",
+    "category": "Homes"
   },
   {
     "name": "115 North Jackson Street",
-    "local": "assets/portfolio/22-115-north-jackson-street.png"
+    "local": "assets/portfolio/22-115-north-jackson-street.png",
+    "category": "Homes"
   },
   {
     "name": "517 Troy",
-    "local": "assets/portfolio/23-517-troy.jpeg"
+    "local": "assets/portfolio/23-517-troy.jpeg",
+    "category": "Homes"
   },
   {
     "name": "412 House",
-    "local": "assets/portfolio/24-412-house.jpg"
+    "local": "assets/portfolio/24-412-house.jpg",
+    "category": "Homes"
   },
   {
     "name": "202 Henley",
-    "local": "assets/portfolio/25-202-henley.jpeg"
+    "local": "assets/portfolio/25-202-henley.jpeg",
+    "category": "Homes"
   },
   {
     "name": "519",
-    "local": "assets/portfolio/26-519.jpeg"
+    "local": "assets/portfolio/26-519.jpeg",
+    "category": "Homes"
   },
   {
     "name": "119 North Blaine Street",
-    "local": "assets/portfolio/27-119-north-blaine-street.png"
+    "local": "assets/portfolio/27-119-north-blaine-street.png",
+    "category": "Homes"
   },
   {
     "name": "840 East",
-    "local": "assets/portfolio/28-840-east.png"
+    "local": "assets/portfolio/28-840-east.png",
+    "category": "Homes"
   }
 ]
