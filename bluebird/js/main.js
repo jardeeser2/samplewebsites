@@ -7,6 +7,15 @@
 
   if (year) year.textContent = String(new Date().getFullYear());
 
+  const header = document.querySelector(".site-header");
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
   if (toggle && mobileNav) {
     toggle.addEventListener("click", () => {
       const open = mobileNav.classList.toggle("is-open");
