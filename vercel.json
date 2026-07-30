@@ -20,6 +20,26 @@
       "source": "/landcore/:path*",
       "destination": "/LandCore/:path*",
       "permanent": true
+    },
+    {
+      "source": "/Bluebird",
+      "destination": "/bluebird/",
+      "permanent": true
+    },
+    {
+      "source": "/Bluebird/:path*",
+      "destination": "/bluebird/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/BlueBird",
+      "destination": "/bluebird/",
+      "permanent": true
+    },
+    {
+      "source": "/BlueBird/:path*",
+      "destination": "/bluebird/:path*",
+      "permanent": true
     }
   ]
 }
