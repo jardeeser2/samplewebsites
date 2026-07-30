@@ -10,6 +10,16 @@
       "source": "/Elijah/:path*",
       "destination": "/elijah/:path*",
       "permanent": true
+    },
+    {
+      "source": "/landcore",
+      "destination": "/LandCore/",
+      "permanent": true
+    },
+    {
+      "source": "/landcore/:path*",
+      "destination": "/LandCore/:path*",
+      "permanent": true
     }
   ]
 }
