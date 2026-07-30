@@ -89,4 +89,43 @@
       video.addEventListener("loadedmetadata", playSafe);
     }
   }
+
+  // Project gallery lightbox
+  const galleryButtons = document.querySelectorAll(".project-gallery-item");
+  if (galleryButtons.length) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.innerHTML =
+      '<button class="lightbox-close" type="button" aria-label="Close">&times;</button><img alt="" />';
+    document.body.appendChild(lightbox);
+    const lightboxImg = lightbox.querySelector("img");
+    const closeBtn = lightbox.querySelector(".lightbox-close");
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || "";
+      lightbox.classList.add("is-open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      document.body.style.overflow = "";
+      lightboxImg.src = "";
+    }
+
+    galleryButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        openLightbox(btn.dataset.full || btn.querySelector("img")?.src, btn.querySelector("img")?.alt);
+      });
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLightbox();
+    });
+  }
 })();
