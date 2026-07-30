@@ -1,3 +1,15 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/Elijah",
+      "destination": "/elijah/",
+      "permanent": true
+    },
+    {
+      "source": "/Elijah/:path*",
+      "destination": "/elijah/:path*",
+      "permanent": true
+    }
+  ]
 }
