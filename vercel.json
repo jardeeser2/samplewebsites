@@ -40,6 +40,16 @@
       "source": "/BlueBird/:path*",
       "destination": "/bluebird/:path*",
       "permanent": true
+    },
+    {
+      "source": "/sunrise",
+      "destination": "/Sunrise/",
+      "permanent": true
+    },
+    {
+      "source": "/sunrise/:path*",
+      "destination": "/Sunrise/:path*",
+      "permanent": true
     }
   ]
 }

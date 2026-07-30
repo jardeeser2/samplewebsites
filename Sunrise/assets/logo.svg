@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Sunrise Home Center">
+  <defs>
+    <radialGradient id="sun" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ffe08a"/>
+      <stop offset="55%" stop-color="#f0a202"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </radialGradient>
+  </defs>
+  <circle cx="60" cy="48" r="22" fill="url(#sun)"/>
+  <g stroke="#f0a202" stroke-width="3" stroke-linecap="round">
+    <path d="M60 14v8"/>
+    <path d="M60 74v6"/>
+    <path d="M28 48h8"/>
+    <path d="M84 48h8"/>
+    <path d="M38 26l5 5"/>
+    <path d="M77 67l5 5"/>
+    <path d="M82 26l-5 5"/>
+    <path d="M43 67l-5 5"/>
+  </g>
+  <path d="M22 88 L60 52 L98 88 Z" fill="#1a2744"/>
+  <path d="M34 88h52v10H34z" fill="#243556"/>
+  <rect x="54" y="72" width="12" height="16" fill="#f7f1e8"/>
+</svg>

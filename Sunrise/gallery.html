@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery | Sunrise Home Center</title>
+    <meta name="description" content="Photo gallery of manufactured homes from Sunrise Home Center." />
+    <link rel="icon" href="/Sunrise/assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;600;700;800&family=Literata:opsz,wght@7..72,400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/Sunrise/css/styles.css" />
+    
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/Sunrise/">
+          <img class="brand-mark" src="/Sunrise/assets/logo.png" alt="Sunrise Home Center" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/Sunrise/floor-plans.html">Floor Plans</a>
+          <a href="/Sunrise/tours.html">Virtual Tours</a>
+          <a href="/Sunrise/gallery.html" class="is-active">Gallery</a>
+          <a href="/Sunrise/about.html">About</a>
+          <a href="/Sunrise/faq.html">FAQ</a>
+          <a class="nav-cta" href="/Sunrise/contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="/Sunrise/">Home</a>
+      <a href="/Sunrise/floor-plans.html">Floor Plans</a>
+      <a href="/Sunrise/tours.html">Virtual Tours</a>
+      <a href="/Sunrise/gallery.html">Gallery</a>
+      <a href="/Sunrise/about.html">About</a>
+      <a href="/Sunrise/faq.html">FAQ</a>
+      <a href="/Sunrise/contact.html">Contact</a>
+    </nav>
+
+    <main>
+      <section class="page-hero">
+        <img src="/Sunrise/assets/hero-5.jpg" alt="" />
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <h1>Photo Gallery</h1>
+          <p>Select a photo below to view it here. For more pictures, visit and like the Sunrise Home Center Facebook page.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container gallery-showcase">
+          <div class="gallery-stage">
+            <img id="gallery-main" src="/Sunrise/assets/gallery/hero-1.jpg" alt="Sunrise Home Center manufactured home" />
+          </div>
+          <div class="gallery-thumbs" role="list">
+            <button class="gallery-thumb is-active" type="button" data-full="/Sunrise/assets/gallery/hero-1.jpg" aria-label="View photo 1">
+              <img src="/Sunrise/assets/gallery/hero-1.jpg" alt="Sunrise Home Center manufactured home 1" loading="lazy" />
+            </button>
+            <button class="gallery-thumb" type="button" data-full="/Sunrise/assets/gallery/hero-3.jpg" aria-label="View photo 2">
+              <img src="/Sunrise/assets/gallery/hero-3.jpg" alt="Sunrise Home Center manufactured home 2" loading="lazy" />
+            </button>
+            <button class="gallery-thumb" type="button" data-full="/Sunrise/assets/gallery/hero-5.jpg" aria-label="View photo 3">
+              <img src="/Sunrise/assets/gallery/hero-5.jpg" alt="Sunrise Home Center manufactured home 3" loading="lazy" />
+            </button>
+            <button class="gallery-thumb" type="button" data-full="/Sunrise/assets/gallery/hero-4.jpg" aria-label="View photo 4">
+              <img src="/Sunrise/assets/gallery/hero-4.jpg" alt="Sunrise Home Center manufactured home 4" loading="lazy" />
+            </button>
+            <button class="gallery-thumb" type="button" data-full="/Sunrise/assets/gallery/hero-2.jpg" aria-label="View photo 5">
+              <img src="/Sunrise/assets/gallery/hero-2.jpg" alt="Sunrise Home Center manufactured home 5" loading="lazy" />
+            </button>
+            <button class="gallery-thumb" type="button" data-full="/Sunrise/assets/gallery/gallery-big.png" aria-label="View photo 6">
+              <img src="/Sunrise/assets/gallery/gallery-big.png" alt="Sunrise Home Center manufactured home 6" loading="lazy" />
+            </button>
+            <button class="gallery-thumb" type="button" data-full="/Sunrise/assets/gallery/cbbcd024e2329adc0822e36a8449fcb4.jpg" aria-label="View photo 7">
+              <img src="/Sunrise/assets/gallery/cbbcd024e2329adc0822e36a8449fcb4.jpg" alt="Sunrise Home Center manufactured home 7" loading="lazy" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="/Sunrise/assets/logo.png" alt="Sunrise Home Center" />
+        </div>
+        <nav class="footer-nav">
+          <a href="/Sunrise/floor-plans.html">Floor Plans</a>
+          <a href="/Sunrise/tours.html">Virtual Tours</a>
+          <a href="/Sunrise/gallery.html">Photo Gallery</a>
+          <a href="/Sunrise/contact.html">Contact</a>
+        </nav>
+        <div class="footer-meta">
+          <p>1463 Bridge St., Clarkston, WA 99403</p>
+          <p><a href="tel:5097584000">(509) 758-4000</a> · <a href="tel:8007014001">800-701-4001</a></p>
+          <p>&copy; <span id="year"></span> Sunrise Home Center. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/Sunrise/js/main.js"></script>
+  </body>
+</html>
