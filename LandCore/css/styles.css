@@ -627,6 +627,21 @@ p {
   background: linear-gradient(180deg, transparent, rgba(11, 21, 32, 0.85));
 }
 
+.home-projects {
+  margin-bottom: 1.75rem;
+}
+
+@media (min-width: 980px) {
+  .home-projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-projects-cta {
+  display: flex;
+  justify-content: center;
+}
+
 /* Team */
 .team-grid {
   display: grid;
@@ -636,7 +651,7 @@ p {
 .team-member {
   display: grid;
   gap: 1.25rem;
-  align-items: center;
+  align-items: start;
   padding: 1.25rem;
   border-radius: 1.75rem;
   background: rgba(255, 255, 255, 0.62);
