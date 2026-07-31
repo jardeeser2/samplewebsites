@@ -517,9 +517,17 @@ p {
   object-fit: cover;
   object-position: center top;
   transform: none;
+  opacity: 0.64;
+  filter: brightness(1.06);
   /* Nudge the photo down so faces clear the fixed header */
   top: calc(var(--header-h) * 0.35);
   height: calc(100% - var(--header-h) * 0.35);
+}
+
+.page-hero-team .hero-scrim {
+  background:
+    linear-gradient(180deg, rgba(14, 18, 16, 0.48) 0%, rgba(14, 18, 16, 0.28) 42%, rgba(14, 18, 16, 0.82) 100%),
+    linear-gradient(90deg, rgba(14, 18, 16, 0.62) 0%, rgba(14, 18, 16, 0.3) 50%, rgba(14, 18, 16, 0.1) 100%);
 }
 
 .page-hero .hero-content {
