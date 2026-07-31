@@ -674,7 +674,7 @@ p {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, var(--accent-soft), var(--accent));
+  background: linear-gradient(180deg, #d2c4b0, #b6a48c);
 }
 
 .stat strong {
@@ -950,7 +950,7 @@ p {
 
 @media (min-width: 980px) {
   .project-grid-bleed {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
   }
 
@@ -965,16 +965,47 @@ p {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 979px) {
   .project-grid-bleed .project-card {
-    min-height: clamp(20rem, 36vw, 30rem);
+    grid-column: auto;
+    min-height: clamp(18rem, 34vw, 26rem);
+  }
+
+  .project-grid-bleed .project-card:nth-child(odd) {
+    min-height: clamp(22rem, 42vw, 32rem);
   }
 }
 
 @media (min-width: 980px) {
-  .project-grid-bleed .project-card {
-    min-height: clamp(22rem, 30vw, 32rem);
-  }
+  /*
+    Organic mosaic for 18 projects — each row still sums to 12,
+    but widths/heights intentionally avoid a repeating rhythm.
+  */
+  .project-grid-bleed .project-card:nth-child(1)  { grid-column: span 8; min-height: clamp(28rem, 46vw, 44rem); }
+  .project-grid-bleed .project-card:nth-child(2)  { grid-column: span 4; min-height: clamp(28rem, 46vw, 44rem); }
+
+  .project-grid-bleed .project-card:nth-child(3)  { grid-column: span 4; min-height: clamp(18rem, 26vw, 24rem); }
+  .project-grid-bleed .project-card:nth-child(4)  { grid-column: span 4; min-height: clamp(22rem, 32vw, 30rem); }
+  .project-grid-bleed .project-card:nth-child(5)  { grid-column: span 4; min-height: clamp(20rem, 28vw, 26rem); }
+
+  .project-grid-bleed .project-card:nth-child(6)  { grid-column: span 5; min-height: clamp(24rem, 36vw, 34rem); }
+  .project-grid-bleed .project-card:nth-child(7)  { grid-column: span 7; min-height: clamp(24rem, 36vw, 34rem); }
+
+  .project-grid-bleed .project-card:nth-child(8)  { grid-column: span 4; min-height: clamp(26rem, 40vw, 38rem); }
+  .project-grid-bleed .project-card:nth-child(9)  { grid-column: span 8; min-height: clamp(26rem, 40vw, 38rem); }
+
+  .project-grid-bleed .project-card:nth-child(10) { grid-column: span 7; min-height: clamp(19rem, 28vw, 26rem); }
+  .project-grid-bleed .project-card:nth-child(11) { grid-column: span 5; min-height: clamp(23rem, 34vw, 32rem); }
+
+  .project-grid-bleed .project-card:nth-child(12) { grid-column: span 4; min-height: clamp(21rem, 30vw, 28rem); }
+  .project-grid-bleed .project-card:nth-child(13) { grid-column: span 3; min-height: clamp(21rem, 30vw, 28rem); }
+  .project-grid-bleed .project-card:nth-child(14) { grid-column: span 5; min-height: clamp(21rem, 30vw, 28rem); }
+
+  .project-grid-bleed .project-card:nth-child(15) { grid-column: span 8; min-height: clamp(25rem, 38vw, 36rem); }
+  .project-grid-bleed .project-card:nth-child(16) { grid-column: span 4; min-height: clamp(25rem, 38vw, 36rem); }
+
+  .project-grid-bleed .project-card:nth-child(17) { grid-column: span 6; min-height: clamp(20rem, 30vw, 28rem); }
+  .project-grid-bleed .project-card:nth-child(18) { grid-column: span 6; min-height: clamp(24rem, 36vw, 34rem); }
 }
 
 .project-grid-bleed .project-card .meta {

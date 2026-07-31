@@ -151,6 +151,7 @@
   let slides = [];
   let index = 0;
   let projectTitle = "";
+  let activeSlug = "";
 
   function show(i) {
     if (!slides.length) return;
@@ -161,12 +162,21 @@
     caption.textContent = `${projectTitle} · ${index + 1} / ${slides.length}`;
   }
 
-  function openGallery(title, images) {
+  function setProjectParam(slug) {
+    const url = new URL(window.location.href);
+    if (slug) url.searchParams.set("project", slug);
+    else url.searchParams.delete("project");
+    window.history.replaceState({}, "", url);
+  }
+
+  function openGallery(title, images, slug) {
     projectTitle = title;
+    activeSlug = slug || "";
     slides = images.slice();
     show(0);
     lightbox.classList.add("is-open");
     document.body.style.overflow = "hidden";
+    if (activeSlug) setProjectParam(activeSlug);
   }
 
   function close() {
@@ -174,6 +184,8 @@
     document.body.style.overflow = "";
     img.src = "";
     slides = [];
+    if (activeSlug) setProjectParam("");
+    activeSlug = "";
   }
 
   async function ensureGalleries() {
@@ -184,19 +196,32 @@
     return galleries;
   }
 
+  async function openBySlug(slug) {
+    if (!slug) return false;
+    try {
+      const map = await ensureGalleries();
+      const project = map[slug];
+      if (!project || !project.images?.length) return false;
+      const card = document.querySelector(`button.project-card[data-slug="${slug}"]`);
+      if (card) card.scrollIntoView({ block: "center", behavior: "smooth" });
+      openGallery(project.title, project.images, slug);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
   projectButtons.forEach((btn) => {
     btn.addEventListener("click", async () => {
-      try {
-        const map = await ensureGalleries();
-        const project = map[btn.dataset.slug];
-        if (!project || !project.images?.length) return;
-        openGallery(project.title, project.images);
-      } catch (err) {
-        const fallback = btn.querySelector(".media img");
-        if (fallback) openGallery(fallback.alt || "Project", [fallback.src]);
-      }
+      const opened = await openBySlug(btn.dataset.slug);
+      if (opened) return;
+      const fallback = btn.querySelector(".media img");
+      if (fallback) openGallery(fallback.alt || "Project", [fallback.src], btn.dataset.slug);
     });
   });
+
+  const requested = new URLSearchParams(window.location.search).get("project");
+  if (requested) openBySlug(requested);
 
   lightbox.querySelector(".lightbox-close").addEventListener("click", close);
   lightbox.querySelector(".lightbox-nav.prev").addEventListener("click", (e) => {
