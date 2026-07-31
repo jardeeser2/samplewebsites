@@ -45,29 +45,35 @@
         </div>
       </section>
       <section class="section">
-        <div class="container reveal" style="max-width:40rem">
+        <div class="container fee-estimate reveal">
           <div class="section-head reveal">
             <p class="eyebrow">Get an indication</p>
             <h2>Let’s size up your project</h2>
             <p>Every site and brief is different. This form helps us understand the basics so we can respond with a useful estimate.</p>
           </div>
-          <form class="form" data-thanks="Thanks — we’ll be in touch with a fee estimate shortly.">
-            <label>Name *<input name="name" required autocomplete="name" /></label>
-            <label>Email *<input type="email" name="email" required autocomplete="email" /></label>
-            <label>Phone<input name="phone" autocomplete="tel" /></label>
-            <label>Project type *
-              <select name="type" required>
-                <option value="">Select…</option>
-                <option>Family home</option>
-                <option>Multi-unit / subdivision</option>
-                <option>Market drawings / visualisation</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>Location<input name="location" placeholder="Upper Hutt, Queenstown, etc." /></label>
-            <label>Project notes *<textarea name="notes" required placeholder="Rough size, number of dwellings, stage of planning…"></textarea></label>
-            <button class="btn btn-dark" type="submit">Request Estimate</button>
-            <p class="form-status"></p>
+          <form class="form form-split" data-thanks="Thanks — we’ll be in touch with a fee estimate shortly.">
+            <div class="form-split-main">
+              <label>Name *<input name="name" required autocomplete="name" /></label>
+              <label>Email *<input type="email" name="email" required autocomplete="email" /></label>
+              <label>Phone<input name="phone" autocomplete="tel" /></label>
+              <label>Project type *
+                <select name="type" required>
+                  <option value="">Select…</option>
+                  <option>Family home</option>
+                  <option>Multi-unit / subdivision</option>
+                  <option>Market drawings / visualisation</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Location<input name="location" placeholder="Upper Hutt, Queenstown, etc." /></label>
+            </div>
+            <div class="form-split-notes">
+              <label>Project notes *<textarea name="notes" required placeholder="Rough size, number of dwellings, stage of planning…"></textarea></label>
+            </div>
+            <div class="form-split-actions">
+              <button class="btn btn-dark btn-lg" type="submit">Request Estimate</button>
+              <p class="form-status"></p>
+            </div>
           </form>
         </div>
       </section>

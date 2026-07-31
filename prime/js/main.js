@@ -65,28 +65,75 @@
     }
   }
 
-  const projectButtons = Array.from(
-    document.querySelectorAll("button.project-card[data-full], button.project-card")
-  );
+  const hero = document.querySelector("[data-hero-rotate]");
+  if (hero) {
+    const slides = Array.from(hero.querySelectorAll(".hero-media img"));
+    const dotsWrap = hero.querySelector(".hero-dots");
+    let index = Math.max(
+      0,
+      slides.findIndex((img) => img.classList.contains("is-active"))
+    );
+    let timer = null;
 
+    if (slides.length > 1) {
+      if (!slides.some((img) => img.classList.contains("is-active"))) {
+        slides[0].classList.add("is-active");
+        index = 0;
+      }
+
+      const dots = slides.map((_, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.setAttribute("aria-label", `Show image ${i + 1}`);
+        btn.addEventListener("click", () => goTo(i));
+        dotsWrap?.appendChild(btn);
+        return btn;
+      });
+
+      function paint() {
+        slides.forEach((img, i) => img.classList.toggle("is-active", i === index));
+        dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+      }
+
+      function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        paint();
+        start();
+      }
+
+      function stop() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      function start() {
+        stop();
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        timer = window.setInterval(() => {
+          index = (index + 1) % slides.length;
+          paint();
+        }, 5000);
+      }
+
+      paint();
+      start();
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) stop();
+        else start();
+      });
+    }
+  }
+
+  const projectButtons = Array.from(document.querySelectorAll("button.project-card[data-slug]"));
   if (!projectButtons.length) return;
-
-  const slides = projectButtons.map((btn) => {
-    const img = btn.querySelector("img");
-    const name = btn.querySelector("strong")?.textContent?.trim() || img?.alt || "";
-    const detail = btn.querySelector(".meta span")?.textContent?.trim() || "";
-    return {
-      src: btn.dataset.full || img?.src || "",
-      alt: img?.alt || name,
-      caption: detail ? `${name} — ${detail}` : name,
-    };
-  });
 
   const lightbox = document.createElement("div");
   lightbox.className = "lightbox";
   lightbox.setAttribute("role", "dialog");
   lightbox.setAttribute("aria-modal", "true");
-  lightbox.setAttribute("aria-label", "Project image");
+  lightbox.setAttribute("aria-label", "Project gallery");
   lightbox.innerHTML = `
     <button class="lightbox-close" type="button" aria-label="Close">&times;</button>
     <button class="lightbox-nav prev" type="button" aria-label="Previous image">‹</button>
@@ -100,19 +147,24 @@
 
   const img = lightbox.querySelector("img");
   const caption = lightbox.querySelector(".lightbox-caption");
+  let galleries = null;
+  let slides = [];
   let index = 0;
+  let projectTitle = "";
 
   function show(i) {
     if (!slides.length) return;
     index = (i + slides.length) % slides.length;
-    const slide = slides[index];
-    img.src = slide.src;
-    img.alt = slide.alt;
-    caption.textContent = `${slide.caption} · ${index + 1} / ${slides.length}`;
+    const src = slides[index];
+    img.src = src;
+    img.alt = `${projectTitle} photo ${index + 1}`;
+    caption.textContent = `${projectTitle} · ${index + 1} / ${slides.length}`;
   }
 
-  function openAt(i) {
-    show(i);
+  function openGallery(title, images) {
+    projectTitle = title;
+    slides = images.slice();
+    show(0);
     lightbox.classList.add("is-open");
     document.body.style.overflow = "hidden";
   }
@@ -121,10 +173,29 @@
     lightbox.classList.remove("is-open");
     document.body.style.overflow = "";
     img.src = "";
+    slides = [];
   }
 
-  projectButtons.forEach((btn, i) => {
-    btn.addEventListener("click", () => openAt(i));
+  async function ensureGalleries() {
+    if (galleries) return galleries;
+    const res = await fetch("/prime/assets/projects/galleries.json");
+    const data = await res.json();
+    galleries = Object.fromEntries(data.map((p) => [p.slug, p]));
+    return galleries;
+  }
+
+  projectButtons.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      try {
+        const map = await ensureGalleries();
+        const project = map[btn.dataset.slug];
+        if (!project || !project.images?.length) return;
+        openGallery(project.title, project.images);
+      } catch (err) {
+        const fallback = btn.querySelector(".media img");
+        if (fallback) openGallery(fallback.alt || "Project", [fallback.src]);
+      }
+    });
   });
 
   lightbox.querySelector(".lightbox-close").addEventListener("click", close);

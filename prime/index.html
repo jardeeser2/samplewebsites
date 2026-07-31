@@ -36,9 +36,11 @@
       <a href="/prime/#contact">Contact</a>
     </nav>
     <main>
-      <section class="hero">
+      <section class="hero" data-hero-rotate>
         <div class="hero-media" aria-hidden="true">
-          <img src="/prime/assets/hero.jpg" alt="" fetchpriority="high" />
+          <img class="is-active" src="/prime/assets/hero.jpg" alt="" fetchpriority="high" />
+          <img src="/prime/assets/projects/rockburn-2.jpg" alt="" loading="lazy" />
+          <img src="/prime/assets/projects/waitangi.jpg" alt="" loading="lazy" />
         </div>
         <div class="hero-scrim"></div>
         <div class="hero-content">
@@ -50,9 +52,10 @@
             <a class="btn btn-ghost" href="/prime/#contact">Talk to Us</a>
           </div>
         </div>
+        <div class="hero-dots" role="tablist" aria-label="Hero images"></div>
       </section>
 
-      <section class="section">
+      <section class="section section-who">
         <div class="container reveal">
           <div class="section-head wide">
             <p class="eyebrow">Who we are</p>
@@ -128,7 +131,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section section-work">
         <div class="container">
           <div class="section-head-row reveal">
             <div class="section-head">
@@ -137,7 +140,7 @@
             </div>
             <a class="btn btn-line" href="/prime/projects.html">All projects</a>
           </div>
-          <div class="project-grid">
+          <div class="project-grid project-grid-home">
             <a class="project-card reveal" href="/prime/projects.html">
               <div class="media"><img src="/prime/assets/projects/rockburn.jpg" alt="Rockburn" /></div>
               <div class="meta"><strong>Rockburn</strong><span>Award-winning residential design</span></div>
@@ -149,6 +152,18 @@
             <a class="project-card reveal" href="/prime/projects.html">
               <div class="media"><img src="/prime/assets/projects/waitangi.jpg" alt="Waitangi House" /></div>
               <div class="meta"><strong>Waitangi House</strong><span>Residential architecture</span></div>
+            </a>
+            <a class="project-card reveal" href="/prime/projects.html">
+              <div class="media"><img src="/prime/assets/projects/greytown.jpg" alt="Greytown" /></div>
+              <div class="meta"><strong>Greytown</strong><span>Wairarapa residence</span></div>
+            </a>
+            <a class="project-card reveal" href="/prime/projects.html">
+              <div class="media"><img src="/prime/assets/projects/glen.jpg" alt="Glen Estate" /></div>
+              <div class="meta"><strong>Glen Estate</strong><span>Development &amp; subdivision</span></div>
+            </a>
+            <a class="project-card reveal" href="/prime/projects.html">
+              <div class="media"><img src="/prime/assets/projects/hill-haven.jpg" alt="Hill Haven" /></div>
+              <div class="meta"><strong>Hill Haven</strong><span>Hillside home</span></div>
             </a>
           </div>
         </div>
