@@ -23,16 +23,6 @@
       "permanent": true
     },
     {
-      "source": "/landcore",
-      "destination": "/LandCore/",
-      "permanent": true
-    },
-    {
-      "source": "/landcore/:path*",
-      "destination": "/LandCore/:path*",
-      "permanent": true
-    },
-    {
       "source": "/Bluebird",
       "destination": "/bluebird/",
       "permanent": true
