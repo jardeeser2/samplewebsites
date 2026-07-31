@@ -50,6 +50,26 @@
       "source": "/sunrise/:path*",
       "destination": "/Sunrise/:path*",
       "permanent": true
+    },
+    {
+      "source": "/Prime",
+      "destination": "/prime/",
+      "permanent": true
+    },
+    {
+      "source": "/Prime/:path*",
+      "destination": "/prime/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/prime-designs",
+      "destination": "/prime/",
+      "permanent": true
+    },
+    {
+      "source": "/prime-designs/:path*",
+      "destination": "/prime/:path*",
+      "permanent": true
     }
   ]
 }
